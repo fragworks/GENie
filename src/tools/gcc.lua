@@ -163,6 +163,7 @@
 				table.insert(result, "-dynamiclib")
 			else
 				table.insert(result, "-shared")
+				table.insert(result, "-Wl,-soname," .. _MAKE.esc(cfg.buildtarget.name))
 			end
 
 			if cfg.system == "windows" and not cfg.flags.NoImportLib then
